@@ -22,7 +22,7 @@ const Dashboard = () =>{
         setError(null)
         setLoading((prev)=>({...prev, whole:true}));
         try{
-            const res = await fetch("http://localhost:5000/business-data", {
+            const res = await fetch("https://growthproai-assignment-backend-q4gh.onrender.com/business-data", {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({"name": form.name, "location": form.location})
@@ -56,7 +56,7 @@ const Dashboard = () =>{
         setLoading((prev)=>({...prev, card:true}));
         const {name, location} = form;
         try{
-            const res = await axios.get('http://localhost:5000/regenerate-headline', {
+            const res = await axios.get('https://growthproai-assignment-backend-q4gh.onrender.com/regenerate-headline', {
             params:{
                 name: name,
                 location: location
